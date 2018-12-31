@@ -116,6 +116,10 @@ Using the active PowerShell connection, execute the following commands on the Ra
 * `bcdedit /store c:\EFIESP\EFI\Microsoft\Boot\BCD -debug on`
 
 	* This command turns on debugging on the device 
+	
+If the `EFIESP` partition could not be found in your device, , you'll have to mount the volume yourself if you want. You can use `mountvol` to get the GUID via SSH.        
+        mkdir C:\EFIESP
+        mountvol C:\EFIESP \\?\Volume{ae420040-0000-0000-0000-200000000000}
 
 On the developer PC, get the COM port number PORT assigned in the system for the USB-to-TTL cable. This will be available in Device Manager under "Ports (COM & LPT)".
 
